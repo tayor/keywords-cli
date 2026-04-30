@@ -1,0 +1,55 @@
+{
+  "name": "keywords-cli",
+  "version": "0.1.0",
+  "description": "A TypeScript CLI for phrase research, opportunity scoring, clustering, and niche discovery.",
+  "type": "module",
+  "license": "MIT",
+  "author": "tayor",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "keywords-cli": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    ".env.example"
+  ],
+  "engines": {
+    "node": ">=18.18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node scripts/fix-bin-mode.mjs",
+    "dev": "tsx src/cli.ts",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "prepublishOnly": "npm run test && npm run build",
+    "pack:dry": "npm pack --dry-run"
+  },
+  "keywords": [
+    "keywords",
+    "seo",
+    "market-research",
+    "niche-research",
+    "cli",
+    "typescript",
+    "opportunity-scoring"
+  ],
+  "dependencies": {
+    "commander": "^12.1.0",
+    "papaparse": "^5.4.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/papaparse": "^5.3.15",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^4.1.5"
+  }
+}
